@@ -5,28 +5,28 @@ while True:
         break
     else:
         print "Get a job! And try again!"
-def withdraw(balance, requestedm):
-    if requestedm > balance:
+def withdraw(balance, requested_money):
+    if requested_money > balance:
         return balance
-    else:
-        remainingb = balance - requestedm
-    if requestedm <= 0:
+    elif requested_money <= 0:
         print "Wrong amount, try again!"
+    
     else:
+        balance = balance - requested_money
         for i in avcur:
-            while requestedm >= i:
+            while requested_money >= i:
                 print "Give " + str(i)
-                requestedm -= i
-            if requestedm == 0:
+                requested_money -= i
+            if requested_money == 0:
                 break
-    return remainingb
+    return balance
 
 while True:
     try:
-        requestedm = int(raw_input("How much money do you want?(Enter 'q' to stop)\n"))
+        requested_money = int(raw_input("How much money do you want?(Enter 'q' to stop)\n"))
     except:
         break
-    balance = withdraw(balance, requestedm)
+    balance = withdraw(balance, requested_money)
     if not balance:
         continue
     else:
