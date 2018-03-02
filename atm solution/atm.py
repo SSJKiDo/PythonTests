@@ -1,5 +1,10 @@
 avcur = [100,50,10,5,1]
-balance = 500
+while True:
+    balance = int(raw_input("How much money do you have in your account?\n"))
+    if balance > 0:
+        break
+    else:
+        print "Get a job! And try again!"
 def withdraw(balance, requestedm):
     if requestedm > balance:
         return balance
