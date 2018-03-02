@@ -1,8 +1,28 @@
 avcur = [100,50,10,5,1]
-wantedamount = int(raw_input("How much money do you want?\n"))
-for i in avcur:
-    while wantedamount >= i:
-        print "Give " + str(i)
-        wantedamount -= i
-    if wantedamount == 0:
+balance = 500
+def withdraw(balance, requestedm):
+    if requestedm > balance:
+        return balance
+    else:
+        remainingb = balance - requestedm
+    if requestedm <= 0:
+        print "Wrong amount, try again!"
+    else:
+        for i in avcur:
+            while requestedm >= i:
+                print "Give " + str(i)
+                requestedm -= i
+            if requestedm == 0:
+                break
+    return remainingb
+
+while True:
+    try:
+        requestedm = int(raw_input("How much money do you want?(Enter 'q' to stop)\n"))
+    except:
         break
+    balance = withdraw(balance, requestedm)
+    if not balance:
+        continue
+    else:
+        print "You have $" + str(balance) + " left."
