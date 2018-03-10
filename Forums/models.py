@@ -7,7 +7,7 @@ class Member():
         self.posts = []
 
     def __str__(self):
-        return "Name: {self.name}, Age: {self.age}"
+        return f"Name: {self.name}, Age: {self.age}"
 
 
 class Post():
@@ -19,4 +19,4 @@ class Post():
         self.member_id = member_id
 
     def __str__(self):
-        return "Title: {self.title}, Content: {self.content}"
+        return f"Title: {self.title}, Content: {self.content}"
