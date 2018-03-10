@@ -3,6 +3,9 @@ class Member:
         self.name = name
         self.age = age
 
+    def __str__(self):
+        return """Name: {}, Age: {}""".format(self.name, self.age)
+
 class Post:
     def __init__(self, title, content):
         self.title = title
